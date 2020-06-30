@@ -580,6 +580,8 @@ th{
     margin: 0; 
 }
 
+
+
 .inputDato{
     background-color: rgba(1,1,1,0);
     border: none;
@@ -596,8 +598,9 @@ th{
     background-color: bisque;
     color: black;
     text-shadow: none;
-    font-weight: none;
+    font-weight: normal;
 }
+
 
 
 .inAddName{
@@ -625,6 +628,10 @@ th{
 .tablaPosContainer , .tablaGolesContainer , .tablaAsistContainer{
     max-width: 100%;
     overflow-x: scroll;
+}
+
+.btnHide{
+    display: none;
 }
 
 

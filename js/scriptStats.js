@@ -7,8 +7,12 @@ function iniciarpageStats(){
     let rowsGoles = "";
     
 
+    document.querySelector("#filtro").addEventListener("change",function(){
+        console.log("cambio el fltro");
+    })
+
     //Fetch inicial de la tabla
-    function iniciarTabla(){ 
+    function cargarTabla(){ 
         fetch(urlBase)
         .then(function(respuesta){
             if (respuesta.ok){
@@ -25,6 +29,7 @@ function iniciarpageStats(){
         
     }
 
+    
     //Funcion que calcula la media de goles, de la tabla de goleadores
     function mediaGoles(){
         let suma = 0;
@@ -210,6 +215,7 @@ function iniciarpageStats(){
         mostrarTabla();
     }
 
-    iniciarTabla();
+    cargarTabla();
+    setInterval(cargarTabla, 10000);
     
 }

@@ -25,7 +25,8 @@
             <ul>
                 <li class="boton"><a href="index.html">Inicio</a></li>
                 <li class="boton"><a href="inscripcion.html">Inscripción</a></li>
-                <li class="boton"><a href="reglamento.html">Reglamento</a></li>    
+                <li class="boton"><a href="reglamento.html">Reglamento</a></li>
+                <li class="boton"><a href="estadisticas.html">Estadisticas</a></li> 
             </ul>
             
         </nav>
@@ -207,8 +208,7 @@
                     <table class="tablaAsist">
                     <thead>
                         <tr class="nameTable">
-                            <th></th>
-                            <th>Tabla de asistencias</th>
+                            <th colspan="3">Tabla de asistencias</th>
                         </tr>
                         <tr class="cabeza">
                             <th>Jugador</th>
@@ -256,8 +256,20 @@
                     <table class="tablaGoles" >
                         <thead>
                             <tr class="nameTable">
-                                <th></th>
-                                <th>Tabla de goleadores</th>
+                                <th colspan="5">Tabla de goleadores</th>
+                            </tr>
+                            <tr class="filterTable">
+                                <th class="latTh"></th>
+                                <th colspan="3" class="cenTh">
+                                    <label for="">Mostrar: </label>
+                                    <select id="filtro" class="btnTable" selectop>
+                                        
+                                        <option value="" >Todos2</option>
+                                        <option value="" selected>Todos3</option>
+                                        <option value="" >Todos4</option>
+                                    </select>
+                                </th>
+                                <th class="latTh"></th>
                             </tr>
                             <tr class="cabeza">
                                 <th>Jugador</th>

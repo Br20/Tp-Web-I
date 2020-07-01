@@ -1,223 +1,176 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/pelota.ico">
-    <title>Inscripción al torneo</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/scriptJs.js"></script>
-</head>
-<body>
-
-
-    <header>
-        <div class="logo">
-            <img class="imglogo" src="images/logorustico.png">
-            <h1>TORNEO de los RÚSTICOS</h1>
-            <div class="divBtnNav">
-                <label class="lblNav" for="checkMenu"></label>
+<article class="articleFormulario">
+    <h1>Formulario de inscripción de equipo</h1>
+    <section class="sectionFormulario">
+        <form action="" class="formInscripcion" id="idForm">
+            <h3>Nombre del equipo</h3>
+            <input type="text" name="" id="nombEquipo">
+            <h3>Datos del entrenador</h3>
+            <div class="divDataEntrenador">
+                <div>
+                    <label for="">Apellido y nombre:</label>
+                    <input type="text" name="" id="nombEntrenador">
+                </div>
+                <div>
+                    <label for="">Fecha de nacimiento:</label>
+                    <input type="date" name="" id="nacimientoEntrenador" max="2002-05-06"
+                        title="solo mayores de 18 años">
+                </div>
+                <div>
+                    <label for="">D.N.I.</label>
+                    <input type="number" name="" id="dniEntrenador" max="46000000">
+                </div>
             </div>
-        </div>
-
-        <nav>
-            <input type="checkbox" name="" id="checkMenu">
-            <ul>
-                <li class="boton"><a href="index.html">Inicio</a></li>
-                <li class="boton"><a href="inscripcion.html">Inscripción</a></li>
-                <li class="boton"><a href="reglamento.html">Reglamento</a></li>
-                <li class="boton"><a href="estadisticas.html">Estadisticas</a></li> 
-            </ul>
-            
-        </nav>
-    </header>
-
-    <div class="content">
-        <article class="articleFormulario">
-            <h1>Formulario de inscripción de equipo</h1>
-            <section class="sectionFormulario">
-                <form action="" class="formInscripcion" id ="idForm"> 
-                    <h3>Nombre del equipo</h3>
-                    <input type="text" name="" id="nombEquipo">
-                    <h3>Datos del entrenador</h3>
-                    <div class="divDataEntrenador">
-                        <div>
-                            <label for="">Apellido y nombre:</label> 
-                            <input type="text" name="" id="nombEntrenador">
-                        </div>
-                        <div>
-                            <label for="">Fecha de nacimiento:</label> 
-                            <input type="date" name="" id="nacimientoEntrenador" max="2002-05-06" title="solo mayores de 18 años">
-                        </div>
-                        <div>
-                            <label for="">D.N.I.</label>
-                            <input type="number" name="" id="dniEntrenador" max="46000000">
-                        </div>
+            <h3>Jugadores</h3>
+            <div class="divDataJugadores">
+                <div class="jug1 mostrarJug">
+                    <h4>Jugador 1</h4>
+                    <input type="text" name="" id="nombJug1" placeholder="Nombre y apellido 1">
+                    <input type="date" name="" id="nacimientoJug1" max="2002-05-06" title="solo mayores de 18 años">
+                    <input type="number" name="" id="dorsalJug1" placeholder="Dorsal 1" min="1" max="99">
+                    <div><input type="radio" name="cap" class="inputRadio" id="" checked><label for="">¿Capitán?</label>
                     </div>
-                    <h3>Jugadores</h3>
-                    <div class="divDataJugadores">
-                        <div class="jug1 mostrarJug">
-                            <h4>Jugador 1</h4>
-                            <input type="text" name="" id="nombJug1" placeholder="Nombre y apellido 1">
-                            <input type="date" name="" id="nacimientoJug1" max="2002-05-06" title="solo mayores de 18 años">
-                            <input type="number" name="" id="dorsalJug1" placeholder="Dorsal 1" min = "1" max = "99">
-                            <div><input type="radio" name="cap" class="inputRadio" id="" checked><label for="">¿Capitán?</label></div>
-                            <div class="botonesJug">
-                                <button class="botonAnt" disabled>Jug --</button>
-                                <button class="botonSig">Jug 02</button>
-                            </div>
-                        </div>
-                        <div class="jug2">
-                            <h4>Jugador 2</h4>
-                            <input type="text" name="" id="nombJug2" placeholder="Nombre y apellido 2">
-                            <input type="date" name="" id="nacimientoJug2" max="2002-05-06" title="solo mayores de 18 años">
-                            <input type="number" name="" id="dorsalJug2" placeholder="Dorsal 2" min = "1" max = "99">
-                            <div>
-                                <input type="radio" name="cap" class="inputRadio" id="" >
-                                <label for="">¿Capitán?</label>
-                            </div>
-                            <div class="botonesJug">
-                                <button class="botonAnt">Jug 01</button>
-                                <button class="botonSig">Jug 03</button>
-                            </div>
-                        </div>
-                        <div class="jug3">
-                            <h4>Jugador 3</h4>
-                            <input type="text" name="" id="nombJug3" placeholder="Nombre y apellido 3">
-                            <input type="date" name="" id="nacimientoJug3" max="2002-05-06" title="solo mayores de 18 años">
-                            <input type="number" name="" id="dorsalJug3" placeholder="Dorsal 3" min = "1" max = "99">
-                            <div>
-                                <input type="radio" name="cap" class="inputRadio" id="" >
-                                <label for="">¿Capitán?</label>
-                            </div>
-                            <div class="botonesJug">
-                                <button class="botonAnt">Jug 02</button>
-                                <button class="botonSig">Jug 04</button>
-                            </div>
-                        </div>
-                        <div class="jug4">
-                            <h4>Jugador 4</h4>
-                            <input type="text" name="" id="nombJug4" placeholder="Nombre y apellido 4">
-                            <input type="date" name="" id="nacimientoJug4" max="2002-05-06" title="solo mayores de 18 años">
-                            <input type="number" name="" id="dorsalJug4" placeholder="Dorsal 4" min = "1" max = "99">
-                            <div>
-                                <input type="radio" name="cap" class="inputRadio" id="" >
-                                <label for="">¿Capitán?</label>
-                            </div>
-                            <div class="botonesJug">
-                                <button class="botonAnt">Jug 03</button>
-                                <button class="botonSig">Jug 05</button>
-                            </div>
-                        </div>
-                        <div class="jug5">
-                            <h4>Jugador 5</h4>
-                            <input type="text" name="" id="nombJug5" placeholder="Nombre y apellido 5">
-                            <input type="date" name="" id="nacimientoJug5" max="2002-05-06" title="solo mayores de 18 años">
-                            <input type="number" name="" id="dorsalJug5" placeholder="Dorsal 5" min = "1" max = "99">
-                            <div>
-                                <input type="radio" name="cap" class="inputRadio" id="" >
-                                <label for="">¿Capitán?</label>
-                            </div>
-                            <div class="botonesJug">
-                                <button class="botonAnt">Jug 04</button>
-                                <button class="botonSig">Jug 06</button>
-                            </div>
-                        </div>
-                        <div class="jug6">
-                            <h4>Jugador 6</h4>
-                            <input type="text" name="" id="nombJug6" placeholder="Nombre y apellido 6">
-                            <input type="date" name="" id="nacimientoJug6" max="2002-05-06" title="solo mayores de 18 años">
-                            <input type="number" name="" id="dorsalJug6" placeholder="Dorsal 6" min = "1" max = "99">
-                            <div>
-                                <input type="radio" name="cap" class="inputRadio" id="" >
-                                <label for="">¿Capitán?</label>
-                            </div>
-                            <div class="botonesJug">
-                                <button class="botonAnt">Jug 05</button>
-                                <button class="botonSig">Jug 07</button>
-                            </div>
-                        </div>
-                        <div class="jug7">
-                            <h4>Jugador 7</h4>
-                            <input type="text" name="" id="nombJug7" placeholder="Nombre y apellido 7">
-                            <input type="date" name="" id="nacimientoJug7" max="2002-05-06" title="solo mayores de 18 años">
-                            <input type="number" name="" id="dorsalJug7" placeholder="Dorsal 7" min = "1" max = "99">
-                            <div>
-                                <input type="radio" name="cap" class="inputRadio" id="" >
-                                <label for="">¿Capitán?</label>
-                            </div>
-                            <div class="botonesJug">
-                                <button class="botonAnt">Jug 06</button>
-                                <button class="botonSig">Jug 08</button>
-                            </div>
-                        </div>
-                        <div class="jug8">
-                            <h4>Jugador 8</h4>
-                            <input type="text" name="" id="nombJug8" placeholder="Nombre y apellido 8">
-                            <input type="date" name="" id="nacimientoJug8" max="2002-05-06" title="solo mayores de 18 años">
-                            <input type="number" name="" id="dorsalJug8" placeholder="Dorsal 8" min = "1" max = "99">
-                            <div class="divCapitan">
-                                <input type="radio" name="cap" class="inputRadio" id="" >
-                                <label for="">¿Capitán?</label>
-                            </div>
-                            <div class="botonesJug">
-                                <button class="botonAnt">Jug 07</button>
-                                <button class="botonSig">Jug 09</button>
-                            </div>
-                        </div>
-                        <div class="jug9">
-                            <h4>Jugador 9</h4>
-                            <input type="text" name="" id="nombJug9" placeholder="Nombre y apellido 9">
-                            <input type="date" name="" id="nacimientoJug9" max="2002-05-06" title="solo mayores de 18 años">
-                            <input type="number" name="" id="dorsalJug9" placeholder="Dorsal 9" min = "1" max = "99" >
-                            <div>
-                                <input type="radio" name="cap" class="inputRadio" id="" >
-                                <label for="">¿Capitán?</label>
-                            </div>
-                            <div class="botonesJug">
-                                <button class="botonAnt">Jug 08</button>
-                                <button class="botonSig">Jug 10</button>
-                            </div>
-                        </div>
-                        <div class="jug10">
-                            <h4>Jugador 10</h4>
-                            <input type="text" name="" id="nombJug10" placeholder="Nombre y apellido 10">
-                            <input type="date" name="" id="nacimientoJug10" max="2002-05-06" title="solo mayores de 18 años">
-                            <input type="number" name="" id="dorsalJug10" placeholder="Dorsal 10" min = "1" max = "99">
-                            <div>
-                                <input type="radio" name="cap" class="inputRadio" id="" >
-                                <label for="">¿Capitán?</label>
-                            </div>
-                            <div class="botonesJug">
-                                <button class="botonAnt">Jug 09</button>
-                                <button class="botonSig" disabled>Jug --</button>
-                            </div>
-                        </div>
+                    <div class="botonesJug">
+                        <button class="botonAnt" disabled>Jug --</button>
+                        <button class="botonSig">Jug 02</button>
                     </div>
-                    <div class="divCaptcha">
-                        <div class="divCaptchaGen">
-                            <h4 id="captchaH4"></h4>
-                        </div>
-                        <input type="text" name="" id="captchaIng" title="ingrese el captcha">
+                </div>
+                <div class="jug2">
+                    <h4>Jugador 2</h4>
+                    <input type="text" name="" id="nombJug2" placeholder="Nombre y apellido 2">
+                    <input type="date" name="" id="nacimientoJug2" max="2002-05-06" title="solo mayores de 18 años">
+                    <input type="number" name="" id="dorsalJug2" placeholder="Dorsal 2" min="1" max="99">
+                    <div>
+                        <input type="radio" name="cap" class="inputRadio" id="">
+                        <label for="">¿Capitán?</label>
                     </div>
-                    <p class="parrafoError" id="idParrafoError"></p>
-                    <input type="submit" value="Enviar inscripción" id="btnSubmit" >
-                </form>
-            </section>
-        </article>
-        <aside>
-            
-        </aside>
-    </div>
-
-
-    <footer>
-        <p>Contacto Wsp: +54 249-4112233</p>
-        <nav>
-                <li> <a href="https://www.instagram.com/?hl=es-la" target="_blank"> <img class="sociales" src="images/instagram.png" alt="Instagram"> </a> </li>
-                <li> <a href="https://www.facebook.com/" target="_blank"> <img class="sociales" src="images/facebook.png" alt="Facebook"></a> </li>
-        </nav>
-    </footer>
-    
-</body>
-</html>
+                    <div class="botonesJug">
+                        <button class="botonAnt">Jug 01</button>
+                        <button class="botonSig">Jug 03</button>
+                    </div>
+                </div>
+                <div class="jug3">
+                    <h4>Jugador 3</h4>
+                    <input type="text" name="" id="nombJug3" placeholder="Nombre y apellido 3">
+                    <input type="date" name="" id="nacimientoJug3" max="2002-05-06" title="solo mayores de 18 años">
+                    <input type="number" name="" id="dorsalJug3" placeholder="Dorsal 3" min="1" max="99">
+                    <div>
+                        <input type="radio" name="cap" class="inputRadio" id="">
+                        <label for="">¿Capitán?</label>
+                    </div>
+                    <div class="botonesJug">
+                        <button class="botonAnt">Jug 02</button>
+                        <button class="botonSig">Jug 04</button>
+                    </div>
+                </div>
+                <div class="jug4">
+                    <h4>Jugador 4</h4>
+                    <input type="text" name="" id="nombJug4" placeholder="Nombre y apellido 4">
+                    <input type="date" name="" id="nacimientoJug4" max="2002-05-06" title="solo mayores de 18 años">
+                    <input type="number" name="" id="dorsalJug4" placeholder="Dorsal 4" min="1" max="99">
+                    <div>
+                        <input type="radio" name="cap" class="inputRadio" id="">
+                        <label for="">¿Capitán?</label>
+                    </div>
+                    <div class="botonesJug">
+                        <button class="botonAnt">Jug 03</button>
+                        <button class="botonSig">Jug 05</button>
+                    </div>
+                </div>
+                <div class="jug5">
+                    <h4>Jugador 5</h4>
+                    <input type="text" name="" id="nombJug5" placeholder="Nombre y apellido 5">
+                    <input type="date" name="" id="nacimientoJug5" max="2002-05-06" title="solo mayores de 18 años">
+                    <input type="number" name="" id="dorsalJug5" placeholder="Dorsal 5" min="1" max="99">
+                    <div>
+                        <input type="radio" name="cap" class="inputRadio" id="">
+                        <label for="">¿Capitán?</label>
+                    </div>
+                    <div class="botonesJug">
+                        <button class="botonAnt">Jug 04</button>
+                        <button class="botonSig">Jug 06</button>
+                    </div>
+                </div>
+                <div class="jug6">
+                    <h4>Jugador 6</h4>
+                    <input type="text" name="" id="nombJug6" placeholder="Nombre y apellido 6">
+                    <input type="date" name="" id="nacimientoJug6" max="2002-05-06" title="solo mayores de 18 años">
+                    <input type="number" name="" id="dorsalJug6" placeholder="Dorsal 6" min="1" max="99">
+                    <div>
+                        <input type="radio" name="cap" class="inputRadio" id="">
+                        <label for="">¿Capitán?</label>
+                    </div>
+                    <div class="botonesJug">
+                        <button class="botonAnt">Jug 05</button>
+                        <button class="botonSig">Jug 07</button>
+                    </div>
+                </div>
+                <div class="jug7">
+                    <h4>Jugador 7</h4>
+                    <input type="text" name="" id="nombJug7" placeholder="Nombre y apellido 7">
+                    <input type="date" name="" id="nacimientoJug7" max="2002-05-06" title="solo mayores de 18 años">
+                    <input type="number" name="" id="dorsalJug7" placeholder="Dorsal 7" min="1" max="99">
+                    <div>
+                        <input type="radio" name="cap" class="inputRadio" id="">
+                        <label for="">¿Capitán?</label>
+                    </div>
+                    <div class="botonesJug">
+                        <button class="botonAnt">Jug 06</button>
+                        <button class="botonSig">Jug 08</button>
+                    </div>
+                </div>
+                <div class="jug8">
+                    <h4>Jugador 8</h4>
+                    <input type="text" name="" id="nombJug8" placeholder="Nombre y apellido 8">
+                    <input type="date" name="" id="nacimientoJug8" max="2002-05-06" title="solo mayores de 18 años">
+                    <input type="number" name="" id="dorsalJug8" placeholder="Dorsal 8" min="1" max="99">
+                    <div class="divCapitan">
+                        <input type="radio" name="cap" class="inputRadio" id="">
+                        <label for="">¿Capitán?</label>
+                    </div>
+                    <div class="botonesJug">
+                        <button class="botonAnt">Jug 07</button>
+                        <button class="botonSig">Jug 09</button>
+                    </div>
+                </div>
+                <div class="jug9">
+                    <h4>Jugador 9</h4>
+                    <input type="text" name="" id="nombJug9" placeholder="Nombre y apellido 9">
+                    <input type="date" name="" id="nacimientoJug9" max="2002-05-06" title="solo mayores de 18 años">
+                    <input type="number" name="" id="dorsalJug9" placeholder="Dorsal 9" min="1" max="99">
+                    <div>
+                        <input type="radio" name="cap" class="inputRadio" id="">
+                        <label for="">¿Capitán?</label>
+                    </div>
+                    <div class="botonesJug">
+                        <button class="botonAnt">Jug 08</button>
+                        <button class="botonSig">Jug 10</button>
+                    </div>
+                </div>
+                <div class="jug10">
+                    <h4>Jugador 10</h4>
+                    <input type="text" name="" id="nombJug10" placeholder="Nombre y apellido 10">
+                    <input type="date" name="" id="nacimientoJug10" max="2002-05-06" title="solo mayores de 18 años">
+                    <input type="number" name="" id="dorsalJug10" placeholder="Dorsal 10" min="1" max="99">
+                    <div>
+                        <input type="radio" name="cap" class="inputRadio" id="">
+                        <label for="">¿Capitán?</label>
+                    </div>
+                    <div class="botonesJug">
+                        <button class="botonAnt">Jug 09</button>
+                        <button class="botonSig" disabled>Jug --</button>
+                    </div>
+                </div>
+            </div>
+            <div class="divCaptcha">
+                <div class="divCaptchaGen">
+                    <h4 id="captchaH4"></h4>
+                </div>
+                <input type="text" name="" id="captchaIng" title="ingrese el captcha">
+            </div>
+            <p class="parrafoError" id="idParrafoError"></p>
+            <input type="submit" value="Enviar inscripción" id="btnSubmit">
+        </form>
+    </section>
+</article>
+<aside>
+</aside>

@@ -1,22 +1,22 @@
 document.addEventListener("DOMContentLoaded", function(){
 
 
-    iniciarMainPage("index.html");
+    cargarPage("noticias.html");
 
     document.querySelector("#botonInicio").addEventListener("click",function(){
-        iniciarMainPage("noticias.html");
+        cargarPage("noticias.html");
     });
     document.querySelector("#botonEstadisticas").addEventListener("click",function(){
-        iniciarMainPage("estadisticas.html");
+        cargarPage("estadisticas.html");
     });
     document.querySelector("#botonInscripcion").addEventListener("click",function(){
-        iniciarMainPage("inscripcion.html");
+        cargarPage("inscripcion.html");
     });
     document.querySelector("#botonReglamento").addEventListener("click",function(){
-        iniciarMainPage("reglamento.html");
+        cargarPage("reglamento.html");
     });
 
-    function iniciarMainPage(url) {
+    function cargarPage(url) {
             let pag = document.querySelector(".content");
             fetch(url)
                 .then(function (r) {
@@ -93,16 +93,12 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     function iniciarpageStats(){
-    
         "use sctrict"
         let urlBase = "https://web-unicen.herokuapp.com/api/groups/099/goleadores";
         let rowsGoles = "";
-        
-    
         document.querySelector("#filtro").addEventListener("change",function(){
             console.log("cambio el fltro");
         })
-    
         //Fetch inicial de la tabla
         function cargarTabla(){ 
             fetch(urlBase)
@@ -118,7 +114,6 @@ document.addEventListener("DOMContentLoaded", function(){
             .catch(function (e){
                 console.log(e);
             })
-            
         }
     
         
@@ -130,27 +125,44 @@ document.addEventListener("DOMContentLoaded", function(){
             }
             return (suma/rowsGoles.length);
         }
+
+
+        //Funcionalidad del filtro
+        let team = "";
+        //Si apretan el boton filtrar
+        document.querySelector("#filtrar").addEventListener("click",function(){
+            team = document.querySelector("#filtro").value;
+            mostrarTabla();
+        })
+
+        //Si apretan el boton sacar filtro
+        document.querySelector("#quitar").addEventListener("click",function(){
+            team = "";
+            mostrarTabla();
+        })
+
     
         //Funcion que arma el html del body de la tabla
-        function mostrarTabla(){
-            let contentTabla = "";
-            let lastRow = '<tr class = "filaAdd"> <td> <input type="text" name="" class = "inAddName" id="IdInputNombre" placeholder="Nombre" required> </td>' + 
-            '<td> <input type="text" name="" id="IdInputEquipo" class = "inAddTeam" placeholder="Equipo" required> </td>' +
-            '<td> <input type="number" name="" id="IdInputGoles" class = "inAddGoal" placeholder="Goles" required> </td>' +
-            '<td> <input type="button" value="Add" id="idBtnAdd" class = "btnTable" > </td> ' + 
-            '<td> <input type="button" value="Add3" id="idBtnAdd3" class = "btnTable" > </td></tr>';
-            rowsGoles.sort(function (a,b){return (b.thing.goles - a.thing.goles)});
-            let classDistinctRow, classMedia;
-            let media = mediaGoles();
-            for (let index = 0; index < rowsGoles.length; index++) {
-                classMedia = "";
-                classDistinctRow = "";
-                if((index%2) != 0){
-                    classDistinctRow = "distinctRow";
-                }
-                if (rowsGoles[index].thing.goles >= media){
-                    classMedia = "moreThanMedia";
-                }
+    function mostrarTabla(){
+        let contentTabla = "";
+        let lastRow = '<tr class = "filaAdd"> <td> <input type="text" name="" class = "inAddName" id="IdInputNombre" placeholder="Nombre" required> </td>' + 
+        '<td> <input type="text" name="" id="IdInputEquipo" class = "inAddTeam" placeholder="Equipo" required> </td>' +
+        '<td> <input type="number" name="" id="IdInputGoles" class = "inAddGoal" placeholder="Goles" required> </td>' +
+        '<td> <input type="button" value="Add" id="idBtnAdd" class = "btnTable" > </td> ' + 
+        '<td> <input type="button" value="Add3" id="idBtnAdd3" class = "btnTable" > </td></tr>';
+        rowsGoles.sort(function (a,b){return (b.thing.goles - a.thing.goles)});
+        let classDistinctRow, classMedia;
+        let media = mediaGoles();
+        for (let index = 0; index < rowsGoles.length; index++) {
+            classMedia = "";
+            classDistinctRow = "";
+            if((index%2) != 0){
+                classDistinctRow = "distinctRow";
+            }
+            if (rowsGoles[index].thing.goles >= media){
+                classMedia = "moreThanMedia";
+            }
+            if((team=="") || (team==rowsGoles[index].thing.equipo)){
                 let fila = '<tr class= "'+ classMedia + " " + classDistinctRow + '"> <td><input type="text" class="input' + index + ' inputDato" value=" ' + rowsGoles[index].thing.nombre +
                 ' " readonly> </td>'
                 contentTabla += fila + ' <td><input type="text" class="input' + index + ' inputDato" value=" ' + rowsGoles[index].thing.equipo +
@@ -159,6 +171,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 '<td><button class = "btnEdit btnTable" name = btnEdit'  + index +' id = "' + rowsGoles[index]._id + '"> Edit </button> ' + 
                 '<button class = "btnSave btnTable btnHide" name = btnSave' + index + ' id = "' + rowsGoles[index]._id + '"> Save </button> </td></tr>'
             }
+        }
             document.querySelector("#idTBodyGoles").innerHTML = contentTabla + lastRow;
             document.querySelector("#idBtnAdd").addEventListener("click", addRow);
     

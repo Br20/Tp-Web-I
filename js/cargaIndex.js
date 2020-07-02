@@ -313,13 +313,6 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     
     
-        //Funcion inutil de mierda
-        //Funcion que borra todo el json 
-        function deleteAll(idToDel){
-            rowsGoles.splice(0,rowsGoles.length);
-            mostrarTabla();
-        }
-    
         cargarTabla();
         setInterval(cargarTabla, 10000);
         

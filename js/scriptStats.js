@@ -1,15 +1,12 @@
 document.addEventListener("DOMContentLoaded",iniciarpageStats);
 
+
 function iniciarpageStats(){
     
     "use sctrict"
     let urlBase = "https://web-unicen.herokuapp.com/api/groups/099/goleadores";
     let rowsGoles = "";
-    
 
-    document.querySelector("#filtro").addEventListener("change",function(){
-        console.log("cambio el fltro");
-    })
 
     //Fetch inicial de la tabla
     function cargarTabla(){ 
@@ -39,6 +36,20 @@ function iniciarpageStats(){
         return (suma/rowsGoles.length);
     }
 
+    //Funcionalidad del filtro
+    let team = "";
+    //Si apretan el boton filtrar
+    document.querySelector("#filtrar").addEventListener("click",function(){
+        team = document.querySelector("#filtro").value;
+        mostrarTabla();
+    })
+    //Si apretan el boton sacar filtro
+    document.querySelector("#quitar").addEventListener("click",function(){
+        team = "";
+        mostrarTabla();
+    })
+    
+    
     //Funcion que arma el html del body de la tabla
     function mostrarTabla(){
         let contentTabla = "";
@@ -59,16 +70,19 @@ function iniciarpageStats(){
             if (rowsGoles[index].thing.goles >= media){
                 classMedia = "moreThanMedia";
             }
-            let fila = '<tr class= "'+ classMedia + " " + classDistinctRow + '"> <td><input type="text" class="input' + index + ' inputDato" value=" ' + rowsGoles[index].thing.nombre +
-            ' " readonly> </td>'
-            contentTabla += fila + ' <td><input type="text" class="input' + index + ' inputDato" value=" ' + rowsGoles[index].thing.equipo +
-            ' " readonly> </td> <td><input type="number" class="input' + index + ' inputDato" value="' + rowsGoles[index].thing.goles +
-            '" readonly> </td><td><button class = "btnDel btnTable" id = "' + rowsGoles[index]._id + '"> Del </button> </td> ' +
-            '<td><button class = "btnEdit btnTable" name = btnEdit'  + index +' id = "' + rowsGoles[index]._id + '"> Edit </button> ' + 
-            '<button class = "btnSave btnTable btnHide" name = btnSave' + index + ' id = "' + rowsGoles[index]._id + '"> Save </button> </td></tr>'
+            if((team=="") || (team==rowsGoles[index].thing.equipo)){
+                let fila = '<tr class= "'+ classMedia + " " + classDistinctRow + '"> <td><input type="text" class="input' + index + ' inputDato" value=" ' + rowsGoles[index].thing.nombre +
+                ' " readonly> </td>'
+                contentTabla += fila + ' <td><input type="text" class="input' + index + ' inputDato" value=" ' + rowsGoles[index].thing.equipo +
+                ' " readonly> </td> <td><input type="number" class="input' + index + ' inputDato" value="' + rowsGoles[index].thing.goles +
+                '" readonly> </td><td><button class = "btnDel btnTable" id = "' + rowsGoles[index]._id + '"> Del </button> </td> ' +
+                '<td><button class = "btnEdit btnTable" name = btnEdit'  + index +' id = "' + rowsGoles[index]._id + '"> Edit </button> ' + 
+                '<button class = "btnSave btnTable btnHide" name = btnSave' + index + ' id = "' + rowsGoles[index]._id + '"> Save </button> </td></tr>'
+            }
         }
         document.querySelector("#idTBodyGoles").innerHTML = contentTabla + lastRow;
         document.querySelector("#idBtnAdd").addEventListener("click", addRow);
+
 
         //Funcionalidad a los botones Delete
         let btnDel = document.querySelectorAll(".btnDel");
@@ -206,6 +220,7 @@ function iniciarpageStats(){
             }
         })
     }
+
 
 
     //Funcion inutil de mierda
